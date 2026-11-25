@@ -1,88 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#05060c" />
-<title>NEON//CALC — Cyber Funk Calculator</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Letter For Kurt</title>
+
+    <link rel="stylesheet" href="design.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-  <div class="noise"></div>
-  <div class="scanlines"></div>
-  <div class="grid-floor"></div>
-  <div class="vignette"></div>
 
-  <main class="rig">
-    <header class="rig__top">
-      <div class="brand">
-        <span class="brand__mark">◆</span>
-        <h1 class="brand__title glitch" data-text="NEON//CALC">NEON//CALC</h1>
-      </div>
-      <div class="status">
-        <span class="status__dot"></span>
-        <span class="status__text" id="clock">--:--:--</span>
-      </div>
-    </header>
+    <!-- BACKGROUND EFFECTS -->
+    <div class="ambient-light"></div>
+    <div class="dust-container" id="dustContainer"></div>
 
-    <section class="panel">
-      <div class="panel__label">
-        <span>OUTPUT_TERMINAL</span>
-        <span class="panel__tag" id="modeTag">STD_MODE</span>
-      </div>
+    <!-- INTRO SCREEN -->
+    <section class="screen" id="intro">
 
-      <div class="display">
-        <div class="display__history" id="history">&nbsp;</div>
-        <div class="display__value" id="display">0</div>
-      </div>
+        <p class="small-title">A MESSAGE FROM SOMEONE</p>
 
-      <div class="keys">
-        <button class="key key--fn" data-action="clear">ESC</button>
-        <button class="key key--fn" data-action="sign">±</button>
-        <button class="key key--fn" data-action="percent">%</button>
-        <button class="key key--op" data-action="divide">÷</button>
+        <h1 class="intro-title">
+            A Letter
+            <span>For You.</span>
+        </h1>
 
-        <button class="key" data-num="7">7</button>
-        <button class="key" data-num="8">8</button>
-        <button class="key" data-num="9">9</button>
-        <button class="key key--op" data-action="multiply">×</button>
+        <p class="intro-text">
+            Some words are better written
+            <br>
+            than spoken.
+        </p>
 
-        <button class="key" data-num="4">4</button>
-        <button class="key" data-num="5">5</button>
-        <button class="key" data-num="6">6</button>
-        <button class="key key--op" data-action="subtract">−</button>
+        <!-- ENVELOPE -->
+        <div class="envelope" id="envelope">
 
-        <button class="key" data-num="1">1</button>
-        <button class="key" data-num="2">2</button>
-        <button class="key" data-num="3">3</button>
-        <button class="key key--op" data-action="add">+</button>
+            <div class="letter-inside"></div>
 
-        <button class="key key--wide" data-num="0">0</button>
-        <button class="key" data-action="decimal">.</button>
-        <button class="key key--eq" data-action="equals">=</button>
-      </div>
+            <div class="wax-seal">
+                K
+            </div>
 
-      <div class="panel__foot">
-        <span>BUILD v2.6.07</span>
-        <span class="panel__hint">KEYBOARD ENABLED</span>
-        <span>© 2077 NEON CORP</span>
-      </div>
+        </div>
+
+        <button class="open-btn" id="openBtn">
+            UNSEAL YOUR LETTER
+        </button>
+
+        <p class="hint">
+            A message worth keeping.
+        </p>
+
     </section>
 
-    <footer class="rig__bottom">
-      <button class="chip" id="soundToggle" aria-pressed="false">
-        <span class="chip__led"></span> SFX <b id="soundLabel">OFF</b>
-      </button>
-      <button class="chip" id="themeToggle">
-        <span class="chip__led chip__led--alt"></span> PALETTE <b id="themeLabel">NIGHT</b>
-      </button>
-      <div class="cpu"><span id="cpuLoad">CPU 12%</span><i style="--w: 62%"></i></div>
-    </footer>
-  </main>
 
-  <script src="script.js"></script>
+    <!-- PASSWORD MODAL -->
+    <div class="password-overlay" id="passwordOverlay">
+
+        <div class="password-box" id="passwordBox">
+
+            <p class="password-label">A PRIVATE MESSAGE</p>
+
+            <h2>Before You Begin</h2>
+
+            <p class="password-description">
+                This letter is meant for someone special.
+                Please enter the password to continue.
+            </p>
+
+            <form id="passwordForm">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter password..."
+                    autocomplete="off"
+                    required
+                >
+
+                <p class="error-message" id="errorMessage">
+                    Incorrect password. Please try again.
+                </p>
+
+                <button type="submit" class="unlock-btn">
+                    UNLOCK LETTER
+                </button>
+
+            </form>
+
+            <button class="cancel-btn" id="cancelBtn">
+                Maybe later
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- LETTER SCREEN -->
+    <section class="screen letter-screen" id="letterScreen">
+
+        <article class="letter">
+
+            <p class="letter-label">
+                A PALANCA LETTER • NOVEMBER 2026
+            </p>
+
+            <h2>
+                A Few Words
+                <br>
+                For You
+            </h2>
+
+            <div class="letter-content">
+
+                <p>Hi Kurt!</p>
+
+                <p>
+                    I just want to remind you that you are doing great,
+                    and you should be proud of yourself for making it this far.
+                </p>
+
+                <p>
+                    Life may not always be easy, but always remember
+                    that you are not alone. Keep trusting God, stay strong,
+                    and never lose hope, even when things get hard.
+                </p>
+
+                <p>
+                    Enjoy your retreat! Take this time to rest, reflect,
+                    and get closer to God. I hope you find peace, happiness,
+                    and new strength through this experience.
+                </p>
+
+                <p>
+                    Always believe in yourself because you are capable
+                    of doing great things.
+                </p>
+
+                <p>
+                    God bless you, Kurt!
+                </p>
+
+            </div>
+
+            <div class="signature">
+                A Friend Who Cares.
+            </div>
+
+        </article>
+
+        <p class="footer">
+            MADE WITH CARE • YOU ARE NEVER ALONE
+        </p>
+
+        <button class="back-btn" id="backBtn">
+            ↶ READ AGAIN
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>

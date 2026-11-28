@@ -1,1 +1,174 @@
-wait 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Letter For Kurt</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND EFFECTS -->
+    <div class="ambient-light"></div>
+    <div class="dust-container" id="dustContainer"></div>
+
+    <!-- INTRO SCREEN -->
+    <section class="screen" id="intro">
+
+        <p class="small-title">A MESSAGE FROM SOMEONE</p>
+
+        <h1 class="intro-title">
+            A Letter
+            <span>For You.</span>
+        </h1>
+
+        <p class="intro-text">
+            Some words are better written
+            <br>
+            than spoken.
+        </p>
+
+        <!-- ENVELOPE -->
+        <div class="envelope" id="envelope">
+
+            <div class="letter-inside"></div>
+
+            <div class="wax-seal">
+                K
+            </div>
+
+        </div>
+
+        <button class="open-btn" id="openBtn">
+            UNSEAL YOUR LETTER
+        </button>
+
+        <p class="hint">
+            A message worth keeping.
+        </p>
+
+    </section>
+
+
+    <!-- PASSWORD MODAL -->
+    <div class="password-overlay" id="passwordOverlay">
+
+        <div class="password-box" id="passwordBox">
+
+            <p class="password-label">A PRIVATE MESSAGE</p>
+
+            <h2>Before You Begin</h2>
+
+            <p class="password-description">
+                This letter is meant for someone special.
+                Please enter the password to continue.
+            </p>
+
+            <form id="passwordForm">
+
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="Enter password..."
+                    autocomplete="off"
+                    required
+                >
+
+                <p class="error-message" id="errorMessage">
+                    Incorrect password. Please try again.
+                </p>
+
+                <button type="submit" class="unlock-btn">
+                    UNLOCK LETTER
+                </button>
+
+            </form>
+
+            <button class="cancel-btn" id="cancelBtn">
+                Maybe later
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- LETTER SCREEN -->
+    <section class="screen letter-screen" id="letterScreen">
+
+        <article class="letter">
+
+            <p class="letter-label">
+                A PALANCA LETTER • NOVEMBER 2026
+            </p>
+
+            <h2>
+                A Few Words
+                <br>
+                For You
+            </h2>
+
+            <div class="letter-content">
+
+                <p>Hi Kurt!</p>
+
+                <p>
+                    I just want to remind you that you are doing great,
+                    and you should be proud of yourself for making it this far.
+                </p>
+
+                <p>
+                    Life may not always be easy, but always remember
+                    that you are not alone. Keep trusting God, stay strong,
+                    and never lose hope, even when things get hard.
+                </p>
+
+                <p>
+                    Enjoy your retreat! Take this time to rest, reflect,
+                    and get closer to God. I hope you find peace, happiness,
+                    and new strength through this experience.
+                </p>
+
+                <p>
+                    Always believe in yourself because you are capable
+                    of doing great things.
+                </p>
+
+                <p>
+                    God bless you, Kurt!
+                </p>
+
+            </div>
+
+            <div class="signature">
+                A Friend Who Cares.
+            </div>
+
+        </article>
+
+        <p class="footer">
+            MADE WITH CARE • YOU ARE NEVER ALONE
+        </p>
+
+        <button class="back-btn" id="backBtn">
+            ↶ READ AGAIN
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
